@@ -1,0 +1,95 @@
+<?php 
+session_start();
+
+// Redirect to login if not logged in
+if (!isset($_SESSION['user_name'])) {
+    header("Location: login.php");
+    exit();
+}
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard - Direct Recast</title>
+  <link rel="stylesheet" href="./css/Style-Home.css" />
+</head>
+<body>
+
+<!-- Overlay -->
+<div class="overlay show" id="overlay"></div>
+
+<!-- Sidebar -->
+<div class="sidebar-wrapper show" id="sidebarWrapper">
+  <button class="menu-toggle" id="menuToggle">&#9776;</button>
+
+  <div class="logo">
+    <img src="/images/Logo.jpg" alt="Direct Recast Logo" />
+  </div>
+
+  <aside class="sidebar">
+    <nav class="nav-buttons">
+      <button class="nav-btn active">
+        <img src="/images/Home.jpg" alt="Dashboard Icon" />
+        Dashboard
+      </button>
+      <button class="nav-btn">
+        <img src="/images/Upload Data.jpg" alt="Upload Icon" />
+        Upload Data
+      </button>
+      <button class="nav-btn">
+        <img src="/images/Pre-EDA.jpg" alt="Pre-EDA Icon" />
+        Pre-EDA
+      </button>
+      <button class="nav-btn">
+        <img src="/images/Forecasting.jpg" alt="Forecast Icon" />
+        Forecasting
+      </button>
+    </nav>
+  </aside>
+</div>
+
+<!-- Main content -->
+<div class="layout">
+  <div class="main-area">
+    <header class="topbar">
+      <button class="menu-toggle" id="menuToggle">&#9776;</button>
+      <div class="user-section">
+        <div class="user-icon">👤</div>
+        <form action="logout.php" method="post" style="display:inline;">
+          <button class="signout-btn" type="submit">Sign out</button>
+        </form>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <h1>Welcome back, <?= htmlspecialchars($_SESSION['user_name']); ?>!</h1>
+      <p>This is your dashboard overview. You can navigate using the sidebar.</p>
+      <!-- You can include partials like `dashboard.php`, `upload.php` etc. dynamically here if needed -->
+    </main>
+  </div>
+</div>
+
+<!-- JavaScript -->
+<script>
+  const menuToggles = document.querySelectorAll("#menuToggle");
+  const sidebarWrapper = document.getElementById("sidebarWrapper");
+  const overlay = document.getElementById("overlay");
+
+  menuToggles.forEach((btn) =>
+    btn.addEventListener("click", () => {
+      sidebarWrapper.classList.toggle("show");
+      overlay.classList.toggle("show");
+    })
+  );
+
+  overlay.addEventListener("click", () => {
+    sidebarWrapper.classList.remove("show");
+    overlay.classList.remove("show");
+  });
+</script>
+
+</body>
+</html>

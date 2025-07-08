@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Direct Recast</title>
+  <link rel="stylesheet" href="Style-Upload Data.css" />
+</head>
+<body>
+    <!-- Overlay -->
+    <div class="overlay show" id="overlay"></div>
+  
+    <!-- Sidebar -->
+    <div class="sidebar-wrapper show" id="sidebarWrapper">
+      <button class="menu-toggle" id="menuToggle">&#9776;</button>
+  
+      <div class="logo">
+        <img src="Logo.jpg" alt="Direct Recast Logo" />
+      </div>
+  
+      <aside class="sidebar">
+        <nav class="nav-buttons">
+          <button class="nav-btn">
+            <img src="Dashboard.jpg" alt="Dashboard Icon" />
+            Dashboard
+          </button>
+          <button class="nav-btn">
+            <img src="Upload Data.jpg" alt="Upload Icon" />
+            Upload Data
+          </button>
+          <button class="nav-btn active">
+            <img src="Pre-EDA.jpg" alt="Pre-EDA Icon" />
+            Pre-EDA
+          </button>
+          <button class="nav-btn">
+            <img src="Forecasting.jpg" alt="Forecast Icon" />
+            Forecasting
+          </button>
+        </nav>
+      </aside>
+    </div>
+  
+    <!-- Main content -->
+    <div class="layout">
+      <div class="main-area">
+        <header class="topbar">
+          <button class="menu-toggle" id="menuToggle">&#9776;</button>
+          <div class="user-section">
+            <div class="user-icon">👤</div>
+            <button class="signout-btn">Sign out</button>
+          </div>
+        </header>
+  
+        <main class="main-content">
+          <!-- Dashboard content -->
+        </main>
+      </div>
+    </div>
+  
+    <!-- JavaScript -->
+    <script>
+      const menuToggles = document.querySelectorAll("#menuToggle");
+      const sidebarWrapper = document.getElementById("sidebarWrapper");
+      const overlay = document.getElementById("overlay");
+  
+      menuToggles.forEach((btn) =>
+        btn.addEventListener("click", () => {
+          sidebarWrapper.classList.toggle("show");
+          overlay.classList.toggle("show");
+        })
+      );
+  
+      overlay.addEventListener("click", () => {
+        sidebarWrapper.classList.remove("show");
+        overlay.classList.remove("show");
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,53 @@
+<?php
+
+include 'config.php';
+
+if (isset($_POST['submit'])) {
+
+   $name = mysqli_real_escape_string($conn, $_POST['name']);
+   $email = mysqli_real_escape_string($conn, $_POST['email']);
+   $pass = mysqli_real_escape_string($conn, md5($_POST['password']));
+   $repass = mysqli_real_escape_string($conn, md5($_POST['repassword']));
+   $user_type = 'user'; // Default user type
+
+   $select_users = mysqli_query($conn, "SELECT * FROM users WHERE email = '$email'") or die('query failed');
+
+}
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sign Up - Direct Recast</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles-signup.css" />
+</head>
+<body>
+
+<div class="main-content">
+  <div class="signup-box">
+    <img src="Logo.jpeg" alt="Direct Recast Logo" class="logo" />
+    <h1>Welcome to <span><strong>Direct</strong> <span class="highlight">Recast</span></span></h1>
+    <div class="subtitle">The Nature of Sales Forecasting</div>
+
+    <form action="" method="post">
+      <input type="text" name="name" placeholder="Name" required />
+      <input type="email" name="email" placeholder="Email" required />
+      <input type="password" name="password" placeholder="Password" required />
+      <input type="password" name="repassword" placeholder="Re-enter Password" required />
+      <button class="signup-button" type="submit" name="submit">SIGN UP</button>
+    </form>
+
+    <div class="login-link">Already have an account? <a href="login.php" class="link-blue">Log In</a></div>
+  </div>
+</div>
+
+<div class="footer-container">
+  <div class="footer-bar footer-blue"></div>
+  <div class="footer-bar footer-red"></div>
+</div>
+</body>
+</html>
