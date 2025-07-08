@@ -1,13 +1,14 @@
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  font-family: "Arial", sans-serif;
 }
 
 body, html {
   height: 100%;
-  font-family: 'Inter', sans-serif;
-  background-color: white;
+  background-color: #deecff;
+  color: #333;
 }
 
 .main-content {

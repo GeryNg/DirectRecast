@@ -33,11 +33,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Direct Recast Login</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <title>Login</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="../css/style.css" />
   <link rel="stylesheet" href="../css/Style-login.css" />
 </head>
 <body>
+
 
 <div class="main-content">
   <div class="login-box">
@@ -69,6 +73,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   <div class="footer-bar footer-blue"></div>
   <div class="footer-bar footer-red"></div>
 </div>
-
 </body>
 </html>

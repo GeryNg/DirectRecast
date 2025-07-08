@@ -1,0 +1,158 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Arial", sans-serif;
+}
+
+body, html {
+  height: 100%;
+  background-color: #deecff;
+  color: #333;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Topbar layout */
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 32px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.brand {
+  font-size: 2rem;
+  font-weight:1000;
+  font-style: italic;
+}
+
+.brand-direct {
+  color: #27478a;
+}
+
+.brand-recast {
+  color: #fc9a79;
+}
+
+
+.top-nav {
+  display: flex;
+  gap: 24px;
+  margin-left: auto;
+}
+
+.top-nav a {
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 18px 9px 12px;
+  border-radius: 8px;
+  transition: background-color 0.3s;
+  position: relative;
+  font-size: 1.05rem;
+}
+
+.top-nav a.active {
+  background-color: #ffe699;
+}
+
+.top-nav a:hover {
+  background-color: #f2f2f2;
+}
+
+/*SignOut*/
+.user-section {
+  position: relative;
+  cursor: pointer;
+  margin-left: 32px;
+  border-radius: 100%;
+  padding: 5px;
+  background-color: #ff9878;
+  transition: background-color 0.2s;
+}
+
+.user-section:hover{
+  background-color: #cc745a;
+}
+
+.user-icon {
+  font-size: 1.6rem;
+  border-radius: 50%;
+  color: #fefdfe;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 50px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.19);
+  overflow: hidden;
+  min-width: 120px;
+}
+
+.signout-btn {
+  padding: 10px 16px;
+  width: 100%;
+  background: none;
+  border: none;
+  text-align: left;
+  color: #0047ab;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.signout-btn:hover {
+  background-color: #f0f0f0;
+}
+/*End SignOut*/
+
+
+@media (max-width: 768px) {
+  .topbar {
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
+    padding: 10px 8px;
+  }
+  .top-nav {
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    margin-left: 0;
+    width: 100%;
+    gap: 14px;
+  }
+  .brand {
+    font-size: 1.4rem;
+  }
+  .user-section {
+    margin-left: 0;
+    align-self: flex-end;
+  }
+}
+
+@media (max-width: 480px) {
+  .top-nav a {
+    font-size: 0.96rem;
+    padding: 7px 7px;
+  }
+}
