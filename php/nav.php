@@ -6,14 +6,6 @@ if (!isset($_SESSION['user_name'])) {
 }
 $currentPage = basename($_SERVER['PHP_SELF']);
 ?>
-<style>
-    body,
-    html {
-        height: 100%;
-        background: url('../images/bg.jpg') no-repeat center center / cover;
-        color: #333;
-    }
-</style>
 
 <header class="topbar">
     <div class="brand">
